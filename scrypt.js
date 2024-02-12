@@ -64,11 +64,14 @@ console.log("isMarried is ", typeof isMarried);
 4. Using const
 
 */
+//projet start: ----------------------------------------------------------------------------
 const upKey = document.getElementById("up");
 const downKey = document.getElementById("down");
 const leftKey = document.getElementById("left");
 const rightKey = document.getElementById("right");
 const snakeElement = document.getElementById("snake");
+
+let addInterval
 
 let snake = {
   position: {
@@ -85,14 +88,14 @@ function upHandler() {
     snake.position.y = 350;
   }
 }
-function righthandler() {
+function rightHandler() {
   snake.position.x = snake.position.x + 10;
   snakeElement.style.left = `${snake.position.x}px`;
   if (snake.position.x >= 440) {
     snake.position.x = 0;
   }
 }
-function lefthandler() {
+function leftHandler() {
   snake.position.x = snake.position.x - 10;
   snakeElement.style.left = `${snake.position.x}px`;
   if (snake.position.x <= 0) {
@@ -107,28 +110,49 @@ function downHandler() {
   }
 }
 
+
 upKey.addEventListener("click", () => {
   if (!snake.isMoving) {
-    setInterval(upHandler, 100);
+    addInterval = setInterval(upHandler, 100);
     snake.isMoving = true;
+    snake.direction = "up"
+  } else if (snake.isMoving && snake.direction !=="up"){
+    snake.direction = "up"
+    clearInterval(addInterval)
+    addInterval = setInterval(upHandler, 100);
   }
 });
 downKey.addEventListener("click", () => {
   if (!snake.isMoving) {
-    setInterval(downHandler, 100);
+    addInterval = setInterval(downHandler, 100);
     snake.isMoving = true;
+    snake.direction = "down"
+  }else if (snake.isMoving && snake.direction !=="down"){
+    snake.direction = "down"
+    clearInterval(addInterval)
+    addInterval = setInterval(downHandler, 100);
   }
 });
 leftKey.addEventListener("click", () => {
   if (!snake.isMoving) {
-    setInterval(lefthandler, 100);
+    addInterval = setInterval(lefthandler, 100);
     snake.isMoving = true;
+    snake.direction = "left"
+  }else if (snake.isMoving && snake.direction !=="left"){
+    snake.direction = "left"
+    clearInterval(addInterval)
+    addInterval = setInterval(leftHandler, 100);
   }
 });
 
 rightKey.addEventListener("click", () => {
   if (!snake.isMoving) {
-    setInterval(righthandler, 100);
+    addInterval = setInterval(righthandler, 100);
     snake.isMoving = true;
+    snake.direction = "right"
+  }else if (snake.isMoving && snake.direction !=="right"){
+    snake.direction = "right"
+    clearInterval(addInterval)
+    addInterval = setInterval(rightHandler, 100);
   }
 });
