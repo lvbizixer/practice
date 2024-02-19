@@ -54,56 +54,7 @@
   top: 56%;
   left: 66%;
 }
-#food2 {
-  background-color: rgb(179, 42, 42);
-  width: 10px;
-  height: 10px;
-  margin: auto;
-  border-radius: 2px;
-  position: absolute;
-  top: 25%;
-  left: 75%;
-}
-#food3 {
-  background-color: rgb(179, 42, 42);
-  width: 10px;
-  height: 10px;
-  margin: auto;
-  border-radius: 2px;
-  position: absolute;
-  top: 20%;
-  left: 44%;
-}
-#food4 {
-  background-color: rgb(179, 42, 42);
-  width: 10px;
-  height: 10px;
-  margin: auto;
-  border-radius: 2px;
-  position: absolute;
-  top: 80%;
-  left: 90%;
-}
-#food5 {
-  background-color: rgb(179, 42, 42);
-  width: 10px;
-  height: 10px;
-  margin: auto;
-  border-radius: 2px;
-  position: absolute;
-  top: 75%;
-  left: 20%;
-}
-#food6 {
-  background-color: rgb(179, 42, 42);
-  width: 10px;
-  height: 10px;
-  margin: auto;
-  border-radius: 2px;
-  position: absolute;
-  top: 40%;
-  left: 14%;
-}
+
 
 button {
   color: red;
